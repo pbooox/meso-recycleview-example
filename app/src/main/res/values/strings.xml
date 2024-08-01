@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">RecyclerviewApp</string>
+    <string name="todo_title">Tareas</string>
+    <string name="todo_dialog_add_task">Añade una tarea</string>
+    <string name="todo_dialog_button_add_task">CREAR TAREA</string>
+</resources>
