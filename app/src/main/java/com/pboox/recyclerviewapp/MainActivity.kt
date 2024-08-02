@@ -47,25 +47,31 @@ class MainActivity : AppCompatActivity()  {
         }
     }
 
+//    mostramos el dialog
     private fun showDialog(){
+//      iniciamos el dialog
         val dialog = Dialog(this)
+//      le indicamos que layout utilizar
         dialog.setContentView(R.layout.dialog_task)
 
         val btnAddTask: Button = dialog.findViewById(R.id.btnAddTask)
         val etTask: EditText = dialog.findViewById(R.id.etTask)
 
-
+//      listener del boton del dialog
         btnAddTask.setOnClickListener{
             val currentTask = etTask.text.toString()
             if(currentTask.isNotEmpty()){
+//              agregamos un objeto de tarea
                 tasks.add(Task(etTask.text.toString()))
+//              actualizamos la lista
                 updateTasks()
+//              escondemos el dialog
                 dialog.hide()
             }
         }
         dialog.show()
     }
-
+//    iniciamos los componentes
     private fun initComponets() {
         rvTasks = findViewById (R.id.rvTasks)
         fabAddTask = findViewById(R.id.fabAddTask)
@@ -83,7 +89,7 @@ class MainActivity : AppCompatActivity()  {
 //        le pasamos al recyclerview el adaptador con la data
         rvTasks.adapter = taskAdapter
     }
-
+// actualizamos la lista de tareas
     private fun updateTasks() {
         taskAdapter.notifyDataSetChanged()
     }
